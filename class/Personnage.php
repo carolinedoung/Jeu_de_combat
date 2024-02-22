@@ -4,7 +4,7 @@ class Personnage {
 
 	private $atk;
 	private $pv;
-	private $name;
+	private $nom;
 	private $id;
 	private $img;
 
@@ -44,8 +44,8 @@ class Personnage {
         return $this->id;
     }
 
-    public function getName() {
-        return $this->name;
+    public function getNom() {
+        return $this->nom;
     }
 
     public function getPv() {
@@ -60,7 +60,7 @@ class Personnage {
 		return $this->regeneration;
 	}
 	
-	public function getImage() {
+	public function getImg() {
 		return $this->img;
 	}
     // Setters
@@ -68,8 +68,8 @@ class Personnage {
         $this->id = $id;
     }
 
-    public function setName($name) {
-        $this->name = $name;
+    public function setNom($nom) {
+        $this->nom = $nom;
     }
 
     public function setPv($pv) {

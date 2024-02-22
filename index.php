@@ -1,49 +1,62 @@
-<?php 
+<?php
 require_once 'init.php';
 session_start();
 
-function chargerClasse($classe)
-{
-    require 'class/'.$classe . '.php';
+
+$action = $_GET['action'] ?? 'start';
+
+switch ($action) {
+    case 'start':
+        require 'view/start.php';
+        break;
+    case 'combat':
+        $personnage1 = $_POST['personnage1'];
+        $personnage2 = $_POST['personnage2'];
+
+        if ($personnage1 == $personnage2) {
+            $error = "Vous ne pouvez pas choisir le même personnage pour les deux combattants.";
+            include 'view/start.php';
+            exit;
+        }
+        break;
+    case 'add':
+        require 'view/add_personnage.php';
+        break;
+    case 'edit':
+        $id = $_GET['id'];
+        $personnage = $manager->getOnePersonnageById($id);
+        require 'view/edit_personnage.php';
+        break;
+        case 'save':
+            $id = $_POST['id'] ?? null;
+            $nom = $_POST['nom'];
+            $pv = $_POST['pv'];
+            $atk = $_POST['atk'];
+        
+            $targetDir = "img/";
+            $targetFile = $targetDir . basename($_FILES['img']['name'] ?? '');
+        
+            if ($_FILES['img']['error'] === 0 && !move_uploaded_file($_FILES['img']['tmp_name'], $targetFile)) {
+                die("Une erreur s'est produite lors du téléchargement de votre fichier.");
+            }
+        
+            $personnage = $id ? $manager->getOnePersonnageById($id) : new Personnage(['nom' => $nom, 'pv' => $pv, 'atk' => $atk]);
+            if ($_FILES['img']['error'] === 0) {
+                $personnage->setImg($targetFile);
+            }
+        
+            $id ? $manager->modifyPersonnage($personnage) : $manager->addPersonnage($personnage);
+        
+            header('Location: index.php?action=list');
+            break;
+    case 'delete':
+        $id = $_GET['id'];
+        $manager->deletePersonnage($id);
+        header('Location: index.php');
+        break;
+    case 'list':
+    default:
+        $personnages = $manager->getAllPersonnage();
+        require 'view/list_personnage.php';
+        break;
 }
-
-spl_autoload_register('chargerClasse'); 
-
-// require ("Personnagepv.php");
-
-// b et c
-$personnage = new Personnage(20,100, 'Gandalf');
-echo ($personnage->crier());
-$personnage -> regenerer(20);
-// On ajoute 20 à la vie pour regénérer
-if ($personnage->is_alive()){
-    echo "Le personnage est vivant.";
-} else {
-    echo "Le personnage est mort."; 
-}
-// var_dump($personnage->heal());
-
-var_dump($personnage->mort());
-// On vérifie si le perso est mort ou pas
-var_dump($personnage);
-
-
-$personnage2 = new Personnage(20,100, 'Gandalf');
-echo ($personnage2->crier());
-$personnage2 -> regenerer(200);
-// On ajoute X à la vie pour regénérer
-if ($personnage2->is_alive()){
-    echo "Le personnage est vivant.";
-} else {
-    echo "Le personnage est mort."; 
-}
-// On vérifie si le perso est mort ou pas
-var_dump($personnage2);
-echo($personnage->attaquer($personnage2));
-
-// Var dump du compteur
-echo "<p>Super ! Vous avez créé ". Personnage::getCompteur()." personnages.</p>";
-
-var_dump($personnage->attaque($personnage2));
-
-?>                                  
