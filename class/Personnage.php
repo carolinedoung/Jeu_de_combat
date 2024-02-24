@@ -97,13 +97,13 @@ public function regenerer ($x=NULL) {
 
 
 public function attaquer (Personnage $personnage){
-	$personnage->pv -= $this->atk;
-	return $this->name . " attaque " . $personnage->name . " de " . $this->atk . " et a actuellement " . $this->pv;
+	$personnage->setPv -= $this->atk;
+	return $this->nom . " attaque " . $personnage->nom . " de " . $this->atk . " et a actuellement " . $this->pv;
 }
 
-public function attaque($cible) {
-	$cible->pv = $this->atk;
-}
+// public function attaque($cible) {
+// 	$cible->pv = $this->atk;
+// }
 
 
 public function reinitPV()

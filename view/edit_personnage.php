@@ -1,6 +1,6 @@
 <?php 
 // require_once 'init.php';
-// $personnage = $manager->getOnePersonnageById($_GET['id']);
+$personnage = $manager->getOnePersonnageById($_GET['id']);
 ?>
 
 

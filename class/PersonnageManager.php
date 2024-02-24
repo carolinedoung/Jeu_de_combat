@@ -37,8 +37,9 @@ public function modifyPersonnage(Personnage $personnage) :bool{
     $stmt->bindValue(':atk', $personnage->getAtk());
     $stmt->bindValue(':id', $personnage->getId());
     $stmt->bindValue(':img', $personnage->getImg());
-    $stmt->execute();
-    return true;
+    // $stmt->execute();
+    // return true;
+    return $stmt->execute();
 }
 
 public function getAllPersonnage() :array {
@@ -46,7 +47,7 @@ public function getAllPersonnage() :array {
     $stmt->execute();
     $personnages = [];
     while ($donnees = $stmt->fetch(PDO::FETCH_ASSOC)){
-        var_dump($donnees);
+        // var_dump($donnees);
         $personnages[] = new Personnage($donnees);
     }
     return $personnages;
@@ -62,4 +63,19 @@ public function getOnePersonnageById($id) :Personnage {
     return $personnage;
 }
 }
+
+// public function getOnePersonnageById($id) : ?Personnage {
+//     $stmt = $this->db->prepare('SELECT * FROM personnage WHERE id = :id');
+//     $stmt->bindValue(':id', $id);
+//     $stmt->execute();
+//     $donnees = $stmt->fetch(PDO::FETCH_ASSOC);
+
+//     if ($donnees) {
+//         return new Personnage($donnees);
+//     } else {
+//         return null;
+//     }
+// }
 ?>
+
+

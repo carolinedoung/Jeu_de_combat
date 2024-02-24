@@ -4,9 +4,16 @@
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <title>Liste des personnages</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste</title>
+</head>
+<body>
+    
+</body>
+</html>
 </head>
 <body>
     <h1>Liste des personnages</h1>

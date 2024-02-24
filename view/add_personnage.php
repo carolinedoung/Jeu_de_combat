@@ -6,7 +6,7 @@
 <body>
     <h1>Ajouter un personnage</h1>
 
-    <form action="index.php?action=save" method="post" enctype="multipart/form-data">
+    <form action="index.php?action=save" method="POST" enctype="multipart/form-data">
         <label for="nom">Nom:</label><br>
         <input type="text" id="nom" name="nom" required><br>
         <label for="pv">PV:</label><br>
