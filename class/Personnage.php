@@ -72,9 +72,17 @@ class Personnage {
         $this->nom = $nom;
     }
 
-    public function setPv($pv) {
-        $this->pv = $pv;
-    }
+    // public function setPv($pv) {
+    //     $this->pv = $pv;
+    // }
+
+	public function setPv($pv) {
+		if ($pv > 0) {
+			$this->pv = $pv;
+		} else {
+			$this->pv = 0;
+		}
+	}
 
     public function setAtk($atk) {
         $this->atk = $atk;
@@ -96,9 +104,14 @@ public function regenerer ($x=NULL) {
 }
 
 
-public function attaquer (Personnage $personnage){
-	$personnage->setPv -= $this->atk;
-	return $this->nom . " attaque " . $personnage->nom . " de " . $this->atk . " et a actuellement " . $this->pv;
+// public function attaquer (Personnage $personnage){
+// 	$personnage->setPv -= $this->atk;
+// 	return $this->nom . " attaque " . $personnage->nom . " de " . $this->atk . " et a actuellement " . $this->pv;
+// }
+
+public function attaquer(Personnage $personnage){
+    $personnage->setPv($personnage->getPv() - $this->atk);
+    return $this->nom . " attaque " . $personnage->nom . " de " . $this->atk . " et a actuellement " . $this->pv;
 }
 
 // public function attaque($cible) {
