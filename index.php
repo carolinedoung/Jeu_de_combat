@@ -11,7 +11,7 @@ switch ($action) {
         break;
     case 'fight':
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            // Check if the necessary form data is present
+            // Verifier si les personnages sont choisis
             if (!isset($_POST['personnage1']) || !isset($_POST['personnage2'])) {
                 $error = "Vous devez choisir deux personnages pour commencer le combat.";
                 include 'view/start.php';
@@ -23,29 +23,26 @@ switch ($action) {
             // $personnage1 = $_POST['personnage1'];
             // $personnage2 = $_POST['personnage2'];
             
-
             if ($personnage1 == $personnage2) {
                 $error = "Vous ne pouvez pas choisir le même personnage pour les deux combattants.";
                 include 'view/start.php';
                 exit;
             }
 
-            // Store the form data in the session
+            // Conserver les objets Personnage dans la session
             $_SESSION['personnage1'] = $personnage1;
             $_SESSION['personnage2'] = $personnage2;
 
-            // Redirect to the fight page
             header('Location: index.php?action=fight');
             exit;
         } else if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-            // Check if the session variables are set
+            // Verifier si les personnages sont dans la session
             if (!isset($_SESSION['personnage1']) || !isset($_SESSION['personnage2'])) {
                 $error = "Les valeurs de session ne sont pas définies.";
                 include 'view/start.php';
                 exit;
             }
 
-            // Load fight view
             include 'view/fight.php';
         }
         break;
@@ -94,14 +91,12 @@ switch ($action) {
         break;
     case 'attack':
         if (isset($_POST['personnage1']) && isset($_POST['personnage2'])) {
-            // Récupérez les objets Personnage de la base de données
+
             $personnage1 = $manager->getOnePersonnageById($_POST['personnage1']);
             $personnage2 = $manager->getOnePersonnageById($_POST['personnage2']);
         
-            // Stockez les identifiants des personnages dans la session
             $_SESSION['personnage1'] = $personnage1->getId();
             $_SESSION['personnage2'] = $personnage2->getId();
-    
     
             $personnage1->attaquer($personnage2);
             $personnage2->attaquer($personnage1);
@@ -111,18 +106,16 @@ switch ($action) {
     
     case 'regenerate':
         if ($_GET['action'] == 'regenerate') {
-            // Récupérez les objets Personnage de la session
+
             $personnage1 = $_SESSION['personnage1'];
             $personnage2 = $_SESSION['personnage2'];
         
             $personnage1->regenerer();
             $personnage2->regenerer();
-        
-            // Stockez les objets Personnage mis à jour dans la session
+
             $_SESSION['personnage1'] = $personnage1;
             $_SESSION['personnage2'] = $personnage2;
         
-            // Redirigez l'utilisateur vers fight.php
             header('Location: index.php?action=fight');
             exit;
         }

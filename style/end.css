@@ -1,0 +1,49 @@
+body {
+    background-image: url(bg/wanofight.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100vh;
+    font-family: 'Press Start 2P', cursive;
+}
+
+h1 {
+    font-size: 2em;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 4px #000000;
+    margin-top: 10px;
+    margin-bottom: 70px;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 4px #000000;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+#end {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    background: rgba(227, 12, 12, 0.9);
+    color: white;
+    font-family: "Press Start 2P", cursive;
+    font-size: 1em;
+    padding: 8px 8px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: #000000 2px 2px 4px;
+    border: 2px solid #FFF;
+    text-shadow: 2px 2px 4px #000000;
+    margin-bottom: 20px;
+}

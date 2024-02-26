@@ -1,13 +1,12 @@
-
-
 html {
-    background-image: url(../style/wanostart2.png);
+    background-image: url(bg/wanostart2.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     height: 100vh;
     font-family: 'press start 2p', cursive;
+    margin: 0;
 }
 
 
@@ -66,7 +65,7 @@ select {
 } 
 
 #btn_start {
-    background: rgba(227, 12, 12, 0.74);
+    background: rgba(227, 12, 12, 0.9);
     color: white;
     font-family: "Press Start 2P", cursive;
     font-size: 1em;
@@ -80,8 +79,9 @@ select {
 }
 
 #btn_start:hover {
-    background: rgba(227, 12, 12, 0.9);
+    background: rgba(227, 12, 12, 0.74);
     transition: 0.5s;
+    transform: scale(1.1);
 }
 
 .container_btn {

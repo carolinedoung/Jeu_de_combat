@@ -1,5 +1,28 @@
 body {
-    background-image: url(style/wanofight.png);
+    background-image: url(bg/wanofight.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100vh;
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+h1 {
+    font-size: 2em;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 4px #000000;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+span {
+    color: yellow;
+    text-shadow: 2px 2px 4px #000000;
 }
 
 #fight {
@@ -7,4 +30,56 @@ body {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+}
+
+#versus p{
+    font-size: 4em;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.btn_fight {
+    background: rgba(227, 12, 12, 0.9);
+    color: white;
+    font-family: "Press Start 2P", cursive;
+    font-size: 1em;
+    padding: 8px 8px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: #000000 2px 2px 4px;
+    border: 2px solid #FFF;
+    text-shadow: 2px 2px 4px #000000;
+    margin-bottom: 20px;
+}
+
+.btn_regenerer {
+    background: #0ce30c;
+    color: white;
+    font-family: "Press Start 2P", cursive;
+    font-size: 1em;
+    padding: 8px 8px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: #000000 2px 2px 4px;
+    border: 2px solid #FFF;
+    text-shadow: 2px 2px 4px #000000;
+    margin-bottom: 20px;
+}
+
+.btn_exit {
+    background-color: #1537DA;
+    color: white;
+    font-family: "Press Start 2P", cursive;
+    font-size: 1em;
+    padding: 8px 8px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: #000000 2px 2px 4px;
+    border: 2px solid #FFF;
+    text-shadow: 2px 2px 4px #000000;
+    margin-bottom: 20px;
+}
+
+#advert {
+    font-size: 0.8em;
+    text-shadow: 2px 2px 4px #000000;
 }

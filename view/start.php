@@ -10,8 +10,9 @@ $personnages = $manager->getAllPersonnage();
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="icon" href="style/bg/favicon.png">
     <link rel="stylesheet" href="style/start.css">
-    <title>Choix des personnages</title>
+    <title>OpFight</title>
 </head>
 <body>
     <h1 class="titre_accueil">Choisir deux personnages</h1>
