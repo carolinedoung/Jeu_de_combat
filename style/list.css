@@ -1,0 +1,27 @@
+html {
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #fff;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.font_list {
+    font-family: 'Press Start 2P', cursive;
+}
+
+.liens_list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10%;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,24 @@
+html {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.50) 100%), url(../style/wanoadd.jpg) lightgray 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100vh;
+    font-family: 'press start 2p', cursive;
+}
+
+h1 {
+    font-size: 2em;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 70px;
+}
+/* 
+#edit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+     */

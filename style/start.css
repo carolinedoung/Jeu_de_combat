@@ -1,0 +1,115 @@
+
+
+html {
+    background-image: url(../style/wanostart2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100vh;
+    font-family: 'press start 2p', cursive;
+}
+
+
+.titre_accueil {
+    font-size: 2em;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 4px #000000;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+#start {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20%;
+}
+
+#container_perso {
+    display: flex;
+    flex-direction: column;
+}
+
+#container_perso img {
+    background: rgba(255, 255, 255, 0.10);
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    border-radius: 4%;
+    box-shadow: #000000 2px 2px 3px;
+    /* border: 2px solid white; */
+}
+
+/* #container_perso img:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+} */
+label {
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+select {
+    color: black;
+    font-family: "Press Start 2P", cursive;
+    font-size: 0.9em;
+    padding: 8px 8px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: #000000 2px 2px 4px;
+    border: 2px solid #FFF;
+} 
+
+#btn_start {
+    background: rgba(227, 12, 12, 0.74);
+    color: white;
+    font-family: "Press Start 2P", cursive;
+    font-size: 1em;
+    padding: 8px 8px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: #000000 2px 2px 4px;
+    border: 2px solid #FFF;
+    text-shadow: 2px 2px 4px #000000;
+
+}
+
+#btn_start:hover {
+    background: rgba(227, 12, 12, 0.9);
+    transition: 0.5s;
+}
+
+.container_btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.liens_accueil {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10%;
+    margin-top: 20px;
+}
+
+.liens_accueil a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.liens_accueil a:hover {
+    color: #FFE01F;
+    transition: 0.5s;
+}
+
+

@@ -14,3 +14,4 @@ document.getElementById('personnage2').addEventListener('change', function() {
     var imageUrl = selectedOption.getAttribute('data-img');
     document.getElementById('image2').src = imageUrl;
 });
+

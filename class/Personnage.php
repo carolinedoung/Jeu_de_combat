@@ -7,6 +7,9 @@ class Personnage {
 	private $nom;
 	private $id;
 	private $img;
+	private $pvMax;
+	private $aRegenere = false;
+
 
 
 	
@@ -37,6 +40,7 @@ class Personnage {
 	{
 		$this->hydrate($donnees);
 		// self::setCompteur();
+		$this->pvMax = $this->pv;
 	}
 
 	// Getters
@@ -51,6 +55,13 @@ class Personnage {
     public function getPv() {
         return $this->pv;
     }
+
+	// public function getPvMax() {
+	// 	return self::MAXLIFE;
+	// }
+	public function getPvMax() {
+		return $this->pvMax;
+	}
 
     public function getAtk() {
         return $this->atk;
@@ -84,6 +95,14 @@ class Personnage {
 		}
 	}
 
+	public function setPvMax($pvMax) {
+		if ($pvMax > 0) {
+			$this->pvMax = $pvMax;
+		} else {
+			$this->pvMax = 0;
+		}
+	}
+
     public function setAtk($atk) {
         $this->atk = $atk;
     }
@@ -92,17 +111,41 @@ class Personnage {
 		$this->img = $img;
 	}
 	
-	// public function setRegeneration($regeneration) {
 
-// 
-public function regenerer ($x=NULL) {
-	if (is_NULL($x)){
-		$this->pv= $x;
+	// public function regenerer() {
+	// 	$this->pv += 50;
+
+	// }
+
+// public function regenerer ($x=NULL) {
+// 	if (is_NULL($x)){
+// 		$this->pv= $x;
+// 	} else {
+// 	$this->pv += $x;
+// 	}
+// }
+
+
+
+// public function regenerer(int $x = NULL) {
+//     if (is_null($x)) {
+//         $this->pv = $this->getPvMax(); // Remet les pv à leur valeur maximale
+//     } else {
+//         $this->pv += $x;
+//     }
+// }
+public function regenerer() {
+	if (!$this->aRegenere) {
+		if ($this->pv + 20 > $this->pvMax) {
+			$this->pv = $this->pvMax;
+		} else {
+			$this->pv += 20;
+		}
+		$this->aRegenere = true;
 	} else {
-	$this->pv += $x;
-	}
+        return "Vous ne pouvez vous régénérer qu'une seule fois.";
+    }
 }
-
 
 // public function attaquer (Personnage $personnage){
 // 	$personnage->setPv -= $this->atk;

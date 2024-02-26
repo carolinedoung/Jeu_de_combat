@@ -1,0 +1,43 @@
+html {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.50) 100%), url(../style/wanoadd.jpg) lightgray 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100vh;
+    font-family: 'press start 2p', cursive;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 2em;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 70px;
+}
+
+input {
+    margin-bottom: 20px;
+}
+
+#btn_add {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #FFF;
+    box-shadow: #000000 2px 2px 4px;
+    background-color: #1537DA;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+a {
+    color: black;
+}
+

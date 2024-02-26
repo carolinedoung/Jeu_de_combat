@@ -60,7 +60,9 @@ public function getOnePersonnageById($id) :Personnage {
     $stmt->execute();
     $donnees = $stmt->fetch(PDO::FETCH_ASSOC);
     return new Personnage($donnees);
-    return $personnage;
+
+    // $personnage = new Personnage($donnees);
+    // return $personnage;
 }
 }
 
